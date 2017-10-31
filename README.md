@@ -7,6 +7,7 @@ Also runs a webserver on http://ESPrelay.local (mDNS) . Call the unlock function
 
 This specific version is used to unlock a door, hence the unlock() function.
 
+Sort of a counterpart to this: https://github.com/Robotto/ESPnfc
 
 HW setup:
 
