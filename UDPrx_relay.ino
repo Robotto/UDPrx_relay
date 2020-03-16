@@ -42,7 +42,7 @@ const unsigned int unlockDuration=500;
 
 //UDP stuff:
 const unsigned int localPort = 1337;    // local port to listen for UDP packets
-const int UDP_PACKET_SIZE = 16; 		// NTP time stamp is in the first 48 bytes of the message
+const int UDP_PACKET_SIZE = 16; 		
 byte packetBuffer[ UDP_PACKET_SIZE ]; //buffer to hold incoming and outgoing packets
 
 
@@ -77,7 +77,7 @@ void setup() {
   
   //fetches ssid and pass and tries to connect
   //if it does not connect it starts an access point with the specified name
-  //here  "ESPNFC"
+  //here  "ESPrelay"
   //and goes into a blocking loop awaiting configuration
   if (!wifiManager.autoConnect("ESPrelay")) {
     Serial.println("failed to connect and hit timeout");
@@ -90,8 +90,7 @@ void setup() {
   // Hostname defaults to esp8266-[ChipID]
   ArduinoOTA.setHostname("ESPrelay");
   // No authentication by default
-  ArduinoOTA.setPassword((const char *)"1804020311");
-  //ArduinoOTA.setPasswordHash((const char *)"77ca9ed101ac99e43b6842c169c20fda");
+  
   ArduinoOTA.onStart([]() { Serial.println("OTA start"); });
   ArduinoOTA.onEnd([]() { Serial.println("OTA End"); ESP.restart(); });
   ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
